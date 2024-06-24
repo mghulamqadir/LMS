@@ -126,3 +126,4 @@ data
 test.js
 yarn.lock
 .idea
+.vscode
