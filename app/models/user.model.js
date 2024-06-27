@@ -9,7 +9,7 @@ const userSchema = new Schema( {
     customers: {
         type: Types.ObjectId,
         ref: "Customer"
-    }
+    },
 } );
 
 

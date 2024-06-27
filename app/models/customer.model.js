@@ -20,6 +20,10 @@ const customerSchema = new Schema({
         type: String,
         required: true,
         default: "Processing",
+    },
+    createdBy: {
+        type: String,
+        required: true
     }
 })
 

@@ -1,12 +1,13 @@
 import mongoose, { Schema, Types, model } from "mongoose";
 
+const laundryItemsSchema = new Schema( {
+    name: { type: String, required: true },
+    description: { type: String },
+} );
+
 const orderSchema = new Schema( {
     oderNumber: { type: Number, required: true },
-    selectedItem: {
-        type: Types.ObjectId,
-        ref: "LaundryItem",
-        required: true
-    },
+    selectedItem: laundryItemsSchema,
     payment: {
         type: Number,
         required: true,
@@ -23,7 +24,13 @@ const orderSchema = new Schema( {
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    urgent:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
+    
 } );
 
 const Order = model( "Order", orderSchema );
